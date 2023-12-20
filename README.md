@@ -1,24 +1,11 @@
-# todo_vue_ts
+# ToDo
 
-## Project setup
-```
-npm install
-```
+Планировщик задач - проект для изучения разработки на Vue 3 и TypeScript.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Stack:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- HTML
+- CSS
+- TypeScript
+- Vue 3
+- Vue CLI
