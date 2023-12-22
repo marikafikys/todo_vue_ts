@@ -49,12 +49,18 @@ export default defineComponent({
 		};
 	},
 	computed: {
+		activeTodos(): Todo[] {
+			return this.todos.filter((todo) => !todo.completed);
+		},
+		doneTodos(): Todo[] {
+			return this.todos.filter((todo) => todo.completed);
+		},
 		filteredTodos(): Todo[] {
 			switch (this.activeFilter) {
 				case "Active":
-					return this.todos.filter((todo) => !todo.completed);
+					return this.activeTodos;
 				case "Done":
-					return this.todos.filter((todo) => todo.completed);
+					return this.filteredTodos;
 				case "All":
 				default:
 					return this.todos;
@@ -62,8 +68,8 @@ export default defineComponent({
 		},
 		stats(): Stats {
 			return {
-				active: this.todos.filter((todo) => !todo.completed).length,
-				done: this.todos.filter((todo) => todo.completed).length,
+				active: this.activeTodos.length,
+				done: this.filteredTodos.length,
 			};
 		},
 	},
